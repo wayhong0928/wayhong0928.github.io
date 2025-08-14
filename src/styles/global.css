@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* 深色模式使用「class 策略」：html.dark 啟用 dark: 變體 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* （選）排版外掛：提供 .prose / .prose-invert 等工具 */
+@plugin "@tailwindcss/typography";
+
+/* 設計 Token：用 @theme 讓 token 直接映射成 Tailwind 公用類 */
+@theme {
+  /* 顏色以 OKLCH/HSL 表示更穩妥 */
+  --color-brand: hsl(220 90% 56%);
+  --color-bg: hsl(0 0% 100%);
+  --color-text: hsl(215 25% 15%);
+  --color-card: hsl(210 20% 98%);
+
+  --radius: 12px;
+  --page-max: 1120px;
+}
+
+/* 深色主題覆寫：寫在任意層都可，這裡放在 utilities 後面也行 */
+html.dark {
+  --color-brand: hsl(220 90% 60%);
+  --color-bg: hsl(215 20% 12%);
+  --color-text: hsl(210 20% 92%);
+  --color-card: hsl(215 16% 18%);
+}
+
+/* 一點點基礎樣式（Tailwind Preflight 已有 margin:0 等） */
+:root,
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* 範例語意化 class（以 @apply 收斂） */
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-3 py-2 border transition;
+}
+.btn-primary {
+  @apply btn bg-[var(--color-brand)] text-white hover:opacity-90;
+}
+.card {
+  @apply rounded-2xl bg-[var(--color-card)] p-5 shadow;
+}
+
+/* 文章排版（有裝 typography 後可用 prose） */
+.prose {
+  /* 你原本的 prose.css 可逐步搬過來，或保留獨立檔案 */
+}

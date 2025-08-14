@@ -1,0 +1,57 @@
+---
+import t, { getLocaleFromPath } from '@/lib/i18n';
+import ThemeSwitch from '@/components/islands/ThemeSwitch.tsx';
+import LangSwitcher from '@/components/islands/LangSwitcher.tsx';
+const locale = getLocaleFromPath(Astro.url.pathname);
+---
+
+<header class="w-full py-4 border-b border-border">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Header Row -->
+    <div class="flex items-center justify-between">
+      <a href={locale === 'en' ? '/en/' : '/'} class="font-semibold text-lg">WayHong</a>
+      
+      <!-- Main Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a 
+          href={locale === 'en' ? '/en/projects' : '/zh/projects'} 
+          class="text-sm font-medium transition-all duration-300 hover:font-bold hover:shadow-sm px-4 py-2 relative group"
+          style="transform: translateY(0px);"
+          onmouseover="this.style.transform='translateY(-3px)'"
+          onmouseout="this.style.transform='translateY(0px)'"
+        >
+          {t('nav.projects', locale)}
+          <span class="absolute bottom-0 left-1/2 right-1/2 h-0 border-b border-gray-400 transition-all duration-300 group-hover:left-0 group-hover:right-0"></span>
+        </a>
+        <a 
+          href={locale === 'en' ? '/en/notes' : '/zh/notes'} 
+          class="text-sm font-medium transition-all duration-300 hover:font-bold hover:shadow-sm px-4 py-2 relative group"
+          style="transform: translateY(0px);"
+          onmouseover="this.style.transform='translateY(-3px)'"
+          onmouseout="this.style.transform='translateY(0px)'"
+        >
+          {t('nav.notes', locale)}
+          <span class="absolute bottom-0 left-1/2 right-1/2 h-0 border-b border-gray-400 transition-all duration-300 group-hover:left-0 group-hover:right-0"></span>
+        </a>
+        <a 
+          href="/resume" 
+          class="text-sm font-medium transition-all duration-300 hover:font-bold hover:shadow-sm px-4 py-2 relative group"
+          style="transform: translateY(0px);"
+          onmouseover="this.style.transform='translateY(-3px)'"
+          onmouseout="this.style.transform='translateY(0px)'"
+        >
+          {t('nav.resume', locale)}
+          <span class="absolute bottom-0 left-1/2 right-1/2 h-0 border-b border-gray-400 transition-all duration-300 group-hover:left-0 group-hover:right-0"></span>
+        </a>
+      </nav>
+
+      <!-- Controls -->
+      <div class="flex items-center gap-3">
+        <LangSwitcher client:idle locale={locale} />
+        <ThemeSwitch client:idle />
+      </div>
+    </div>
+
+    <!-- Quick Links Row -->
+  </div>
+</header>

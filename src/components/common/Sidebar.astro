@@ -1,0 +1,102 @@
+---
+import t, { getLocaleFromPath } from '@/lib/i18n';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const currentPath = Astro.url.pathname;
+
+// 確定當前頁面類型
+const isHomePage = currentPath === '/' || currentPath === '/zh' || currentPath === '/en' || currentPath === '/en/';
+const isProjectsPage = currentPath.includes('/projects');
+const isNotesPage = currentPath.includes('/notes');
+---
+
+<aside class="space-y-6 p-6 bg-card rounded-2xl shadow-sm">
+  <!-- About Section -->
+  <section>
+    <h2 class="text-lg font-semibold mb-3 text-content">{t('sidebar.about', locale)}</h2>
+    <p class="text-sm opacity-80 leading-relaxed">{t('sidebar.blurb', locale)}</p>
+  </section>
+
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label={t('sidebar.navigation', locale)}>
+    <h3 class="text-sm font-medium uppercase tracking-wider opacity-60 mb-3">{t('sidebar.navigation', locale)}</h3>
+    
+    <!-- True Horizontal Breadcrumb Navigation -->
+    <div class="flex items-center flex-wrap gap-2 text-sm mb-4">
+      <a 
+        href={locale === 'en' ? '/en/' : '/'}
+        class={`inline-flex items-center px-3 py-1.5 rounded-lg transition-all duration-300 hover:font-semibold hover:shadow-sm ${
+          isHomePage 
+            ? 'bg-gray-100 font-semibold border-b-2 border-gray-400' 
+            : 'text-content hover:bg-gray-50'
+        }`}
+      >
+        🏠 {t('nav.home', locale)}
+      </a>
+      
+      {!isHomePage && (
+        <>
+          <span class="text-gray-400 px-1">/</span>
+          
+          {isProjectsPage && (
+            <span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 font-semibold border-b-2 border-gray-400">
+              💼 {t('nav.projects', locale)}
+            </span>
+          )}
+          
+          {isNotesPage && (
+            <span class="inline-flex items-center px-3 py-1.5 rounded-lg bg-gray-100 font-semibold border-b-2 border-gray-400">
+              📝 {t('nav.notes', locale)}
+            </span>
+          )}
+        </>
+      )}
+    </div>
+
+    <!-- Navigation Links for other pages when on home -->
+    {isHomePage && (
+      <div class="flex items-center gap-4">
+        <a 
+          href={`/${locale}/projects`}
+          class="inline-flex items-center gap-2 text-sm text-content hover:font-semibold hover:bg-gray-50 transition-all duration-300 px-3 py-1.5 rounded-lg relative"
+        >
+          💼 {t('nav.projects', locale)}
+        </a>
+        <a 
+          href={`/${locale}/notes`}
+          class="inline-flex items-center gap-2 text-sm text-content hover:font-semibold hover:bg-gray-50 transition-all duration-300 px-3 py-1.5 rounded-lg relative"
+        >
+          📝 {t('nav.notes', locale)}
+        </a>
+      </div>
+    )}
+  </nav>
+
+  <!-- Quick Links with Header-style Design -->
+  <section>
+    <h3 class="text-sm font-medium uppercase tracking-wider opacity-60 mb-3">{t('sidebar.quickLinks', locale)}</h3>
+    <div class="flex items-center justify-around">
+      <a 
+        href="https://github.com/wayhong0928" 
+        target="_blank"
+        class="inline-flex items-center text-sm font-medium transition-all duration-300 hover:font-bold hover:shadow-sm px-4 py-2 relative group"
+        style="transform: translateY(0px);"
+        onmouseover="this.style.transform='translateY(-3px)'"
+        onmouseout="this.style.transform='translateY(0px)'"
+      >
+        GitHub
+        <span class="absolute bottom-0 left-1/2 right-1/2 h-0 border-b border-gray-400 transition-all duration-300 group-hover:left-0 group-hover:right-0"></span>
+      </a>
+      <a 
+        href="mailto:your-email@example.com" 
+        class="inline-flex items-center text-sm font-medium transition-all duration-300 hover:font-bold hover:shadow-sm px-4 py-2 relative group"
+        style="transform: translateY(0px);"
+        onmouseover="this.style.transform='translateY(-3px)'"
+        onmouseout="this.style.transform='translateY(0px)'"
+      >
+        Email
+        <span class="absolute bottom-0 left-1/2 right-1/2 h-0 border-b border-gray-400 transition-all duration-300 group-hover:left-0 group-hover:right-0"></span>
+      </a>
+    </div>
+  </section>
+</aside>

@@ -1,0 +1,82 @@
+---
+import Card from '@/components/ui/Card.astro';
+
+export interface Project {
+  data: {
+    title: string;
+    period: { start: string; end?: string };
+    role: string;
+    techStack: string[];
+    problem?: string;
+    actions?: string[];
+    impact?: string[];
+    links?: { demo?: string; repo?: string; slides?: string };
+    type?: 'side' | 'academic' | 'work';
+  };
+  slug?: string; // e.g. zh/my-project
+}
+
+interface Props {
+  item: Project;
+}
+const { item } = Astro.props;
+const d = item.data;
+---
+
+<Card as="article" class="hover:shadow-lg transition">
+  <header class="mb-2">
+    <h3 class="text-lg font-semibold">{d.title}</h3>
+    <p class="text-sm opacity-70">
+      {d.period.start}{d.period.end ? ` – ${d.period.end}` : ''} · {d.role}
+    </p>
+  </header>
+  {d.problem && <p class="mb-2 text-sm">{d.problem}</p>}
+  {
+    d.actions && d.actions.length > 0 && (
+      <ul class="list-disc pl-5 text-sm mb-2">
+        {d.actions.map((a) => (
+          <li>{a}</li>
+        ))}
+      </ul>
+    )
+  }
+  {
+    d.impact && d.impact.length > 0 && (
+      <ul class="list-disc pl-5 text-sm mb-3">
+        {d.impact.map((i) => (
+          <li>{i}</li>
+        ))}
+      </ul>
+    )
+  }
+  {
+    d.techStack.length > 0 && (
+      <div class="flex flex-wrap gap-2">
+        {d.techStack.map((t) => (
+          <span class="text-xs px-2 py-1 rounded-xl bg-brand/10">{t}</span>
+        ))}
+      </div>
+    )
+  }
+  {
+    d.links && (d.links.demo || d.links.repo || d.links.slides) && (
+      <div class="mt-3 flex gap-3 text-sm">
+        {d.links.demo && (
+          <a class="underline" href={d.links.demo} target="_blank">
+            Demo
+          </a>
+        )}
+        {d.links.repo && (
+          <a class="underline" href={d.links.repo} target="_blank">
+            Repo
+          </a>
+        )}
+        {d.links.slides && (
+          <a class="underline" href={d.links.slides} target="_blank">
+            Slides
+          </a>
+        )}
+      </div>
+    )
+  }
+</Card>

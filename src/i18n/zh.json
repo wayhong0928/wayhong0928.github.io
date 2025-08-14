@@ -1,0 +1,16 @@
+{
+  "nav": { 
+    "home": "首頁",
+    "projects": "作品集", 
+    "notes": "筆記", 
+    "resume": "履歷" 
+  },
+  "sidebar": {
+    "about": "關於本站",
+    "blurb": "以內容為中心、可長期維護的個人履歷與學習筆記。",
+    "navigation": "導航",
+    "quickLinks": "快速連結"
+  },
+  "lang": { "zh": "中文", "en": "English" },
+  "theme": { "light": "淺色", "dark": "深色" }
+}

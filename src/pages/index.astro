@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import t, { getLocaleFromPath } from '@/lib/i18n';
+
+const locale = getLocaleFromPath(Astro.url.pathname); // 根路徑 → zh
+---
+
+<BaseLayout title="WayHong — 首頁" description="作品集與學習筆記">
+  <!-- Hero Section -->
+  <section class="py-12">
+    <div class="max-w-3xl">
+      <h1 class="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
+        你好，我是 <span class="text-content font-bold">WayHong</span>
+      </h1>
+      <p class="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+        這裡是我的個人履歷、作品與學習筆記。專注於前端開發，熱愛探索新技術與分享經驗。
+      </p>
+      <div class="flex flex-col md:flex-row gap-4">
+        <a href="/zh/projects" class="btn text-center border border-gray-300 hover:border-gray-400 hover:shadow-sm transition-all duration-300">
+          {t('nav.projects', locale)}
+        </a>
+        <a href="/zh/notes" class="btn text-center border border-gray-300 hover:border-gray-400 hover:shadow-sm transition-all duration-300">
+          {t('nav.notes', locale)}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-8 border-t border-gray-200 mt-8">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card text-center border border-gray-200 hover:shadow-sm transition-shadow duration-300">
+        <div class="text-3xl mb-2">🚀</div>
+        <h3 class="font-semibold mb-2">前端開發</h3>
+        <p class="text-sm text-gray-600">專精 React、TypeScript、Astro 等現代前端技術</p>
+      </div>
+      <div class="card text-center border border-gray-200 hover:shadow-sm transition-shadow duration-300">
+        <div class="text-3xl mb-2">📝</div>
+        <h3 class="font-semibold mb-2">技術筆記</h3>
+        <p class="text-sm text-gray-600">記錄學習過程與開發心得，分享實用技巧</p>
+      </div>
+      <div class="card text-center border border-gray-200 hover:shadow-sm transition-shadow duration-300">
+        <div class="text-3xl mb-2">💡</div>
+        <h3 class="font-semibold mb-2">持續學習</h3>
+        <p class="text-sm text-gray-600">探索新技術，追求程式碼品質與使用者體驗</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

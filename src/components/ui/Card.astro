@@ -1,0 +1,10 @@
+---
+// interface Props {
+//   as?: 'div' | 'section' | 'article';
+//   class?: string;
+// }
+const { as = 'div', class: extra = '' } = Astro.props;
+const Tag = as;
+---
+
+<Tag class={`card ${extra}`}><slot /></Tag>

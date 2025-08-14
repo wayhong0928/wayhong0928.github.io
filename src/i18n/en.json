@@ -1,0 +1,16 @@
+{
+  "nav": { 
+    "home": "Home",
+    "projects": "Projects", 
+    "notes": "Notes", 
+    "resume": "Resume" 
+  },
+  "sidebar": {
+    "about": "About",
+    "blurb": "Content-first, long-term maintainable resume and learning notes.",
+    "navigation": "Navigation",
+    "quickLinks": "Quick Links"
+  },
+  "lang": { "zh": "中文", "en": "English" },
+  "theme": { "light": "Light", "dark": "Dark" }
+}

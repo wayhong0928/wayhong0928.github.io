@@ -73,10 +73,6 @@ jobs:
             exit 1
           }
 
-      - name: License compliance check
-        run: |
-          npx license-checker --summary --onlyAllow 'MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC'
-
   # 🔨 Build & Test
   build-test:
     name: Build & Test

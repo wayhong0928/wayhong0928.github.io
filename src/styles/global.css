@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* 深色模式使用「class 策略」：html.dark 啟用 dark: 變體 */
 @custom-variant dark (&:where(.dark, .dark *));

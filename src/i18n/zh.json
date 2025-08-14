@@ -1,9 +1,9 @@
 {
-  "nav": { 
+  "nav": {
     "home": "首頁",
-    "projects": "作品集", 
-    "notes": "筆記", 
-    "resume": "履歷" 
+    "projects": "作品集",
+    "notes": "筆記",
+    "resume": "履歷"
   },
   "sidebar": {
     "about": "關於本站",

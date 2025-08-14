@@ -1,0 +1,78 @@
+# Build outputs
+dist/
+.output/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.npm/
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Log files
+*.log
+
+# Generated files
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Environment files
+.env*
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Bundle reports
+bundle-report.html
+bundle-stats.json
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Binary files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.pdf
+
+# Documentation that should not be formatted
+CHANGELOG.md
+LICENSE
+*.min.js
+*.min.css
+
+# Git hooks (shell scripts)
+.githooks/*
+
+# Specific files that should maintain their format
+robots.txt
+sitemap.xml
+manifest.json

@@ -1,7 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 export const posts = defineCollection({
-  type: "content",
+  type: 'content',
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
@@ -12,7 +12,7 @@ export const posts = defineCollection({
 });
 
 export const projects = defineCollection({
-  type: "content",
+  type: 'content',
   schema: z.object({
     title: z.string(),
     period: z.object({ start: z.string(), end: z.string().optional() }),
@@ -28,20 +28,18 @@ export const projects = defineCollection({
         slides: z.string().url().optional(),
       })
       .default({}),
-    type: z.enum(["side", "academic", "work"]).default("side"),
+    type: z.enum(['side', 'academic', 'work']).default('side'),
   }),
 });
 
 export const activities = defineCollection({
-  type: "content",
+  type: 'content',
   schema: z.object({
     title: z.string(),
     org: z.string().optional(),
     period: z.object({ start: z.string(), end: z.string().optional() }),
     description: z.string().optional(),
-    links: z
-      .array(z.object({ label: z.string(), url: z.string().url() }))
-      .default([]),
+    links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
   }),
 });
 

@@ -14,8 +14,16 @@
     "format:check": "prettier --check .",
     "type-check": "astro check",
     "audit": "npm audit --audit-level=moderate",
+    "audit:fix": "npm audit fix",
     "ci:check": "npm run type-check && npm run lint && npm run format:check && npm run build",
-    "pre-commit": "npm run ci:check"
+    "pre-commit": "npm run ci:check",
+    "clean": "rm -rf dist .astro node_modules/.cache",
+    "fresh-install": "npm run clean && rm -rf node_modules package-lock.json && npm install",
+    "bundle-analysis": "npm run build && du -sh dist && find dist -name '*.js' -exec du -h {} \\; | sort -hr | head -10",
+    "security:check": "npm audit --audit-level=moderate && npm run outdated:check",
+    "outdated:check": "npm outdated",
+    "health:check": "npm run type-check && npm run lint && npm run security:check && npm run build",
+    "deploy:dry-run": "npm run health:check && npm run preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PostList from '@/components/content/PostList.astro';
+import { getCollection } from 'astro:content';
+
+// 獲取英文文章，過濾草稿
+const posts = await getCollection('posts', ({ id, data }) => {
+  return id.startsWith('en/') && !data.draft;
+});
+
+// 按日期排序 (新到舊)
+const sortedPosts = posts
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .map(post => ({
+    ...post,
+    slug: post.slug.replace('en/', '') // 移除語言前綴
+  }));
+---
+
+<BaseLayout title="Notes — WayHong" description="My learning notes and technical articles">
+  <section class="py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-4">Notes</h1>
+      <p class="text-muted leading-relaxed">
+        Here I document my learning journey, technical insights, and practical experiences. Hope you find them helpful.
+      </p>
+    </div>
+
+    {sortedPosts.length > 0 ? (
+      <PostList items={sortedPosts} baseHref="/en/notes" />
+    ) : (
+      <div class="card text-center py-12">
+        <div class="text-4xl mb-4">📝</div>
+        <h3 class="text-lg font-semibold mb-2">Notes Coming Soon</h3>
+        <p class="text-muted">
+          Learning notes are being organized, stay tuned!
+        </p>
+      </div>
+    )}
+
+    <!-- 統計資訊 -->
+    {sortedPosts.length > 0 && (
+      <div class="mt-8 pt-6 border-t border-gray-200">
+        <p class="text-sm text-muted text-center">
+          Currently {sortedPosts.length} note{sortedPosts.length !== 1 ? 's' : ''} available
+        </p>
+      </div>
+    )}
+  </section>
+</BaseLayout>

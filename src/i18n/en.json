@@ -1,9 +1,9 @@
 {
-  "nav": { 
+  "nav": {
     "home": "Home",
-    "projects": "Projects", 
-    "notes": "Notes", 
-    "resume": "Resume" 
+    "projects": "Projects",
+    "notes": "Notes",
+    "resume": "Resume"
   },
   "sidebar": {
     "about": "About",

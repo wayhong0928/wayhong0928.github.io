@@ -77,12 +77,16 @@ npm run dev
 
 ### 可用指令
 
-| 指令              | 說明                |
-| ----------------- | ------------------- |
-| `npm run dev`     | 啟動開發伺服器      |
-| `npm run build`   | 建構正式版本        |
-| `npm run preview` | 預覽正式版本        |
-| `npm run check`   | 執行 Astro 型別檢查 |
+| 指令               | 說明                       |
+| ------------------ | -------------------------- |
+| `npm run dev`      | 啟動開發伺服器             |
+| `npm run build`    | 建構正式版本               |
+| `npm run preview`  | 預覽正式版本               |
+| `npm run check`    | 執行 Astro 型別檢查        |
+| `npm run lint`     | 執行 ESLint 程式碼分析     |
+| `npm run lint:fix` | 執行 ESLint 並自動修正     |
+| `npm run format`   | 使用 Prettier 格式化程式碼 |
+| `npm run ci:check` | 執行所有品質檢查           |
 
 ## 📝 內容管理
 
@@ -92,20 +96,20 @@ npm run dev
 
 ```yaml
 ---
-title: "專案標題"
-period: { start: "2025-01", end: "2025-06" }
-role: "前端工程師"
-techStack: ["React", "TypeScript", "Tailwind"]
-problem: "解決問題的簡短描述"
+title: '專案標題'
+period: { start: '2025-01', end: '2025-06' }
+role: '前端工程師'
+techStack: ['React', 'TypeScript', 'Tailwind']
+problem: '解決問題的簡短描述'
 actions:
-  - "關鍵行動一"
-  - "關鍵行動二"
+  - '關鍵行動一'
+  - '關鍵行動二'
 impact:
-  - "可量化的影響"
+  - '可量化的影響'
 links:
-  demo: "https://demo.example.com"
-  repo: "https://github.com/username/repo"
-type: "work" # work | side | academic
+  demo: 'https://demo.example.com'
+  repo: 'https://github.com/username/repo'
+type: 'work' # work | side | academic
 ---
 詳細專案描述...
 ```
@@ -116,10 +120,10 @@ type: "work" # work | side | academic
 
 ```yaml
 ---
-title: "文章標題"
+title: '文章標題'
 date: 2025-01-01
-summary: "文章簡短摘要"
-tags: ["標籤1", "標籤2"]
+summary: '文章簡短摘要'
+tags: ['標籤1', '標籤2']
 draft: false
 ---
 文章內容...

@@ -77,12 +77,16 @@ The site will be available at `http://localhost:4321`
 
 ### Available Scripts
 
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start development server |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run check`   | Run Astro type checking  |
+| Command            | Description               |
+| ------------------ | ------------------------- |
+| `npm run dev`      | Start development server  |
+| `npm run build`    | Build for production      |
+| `npm run preview`  | Preview production build  |
+| `npm run check`    | Run Astro type checking   |
+| `npm run lint`     | Run ESLint code analysis  |
+| `npm run lint:fix` | Run ESLint with auto-fix  |
+| `npm run format`   | Format code with Prettier |
+| `npm run ci:check` | Run all quality checks    |
 
 ## 📝 Content Management
 
@@ -92,20 +96,20 @@ Create a new `.mdx` file in `src/content/projects/[lang]/`:
 
 ```yaml
 ---
-title: "Project Title"
-period: { start: "2025-01", end: "2025-06" }
-role: "Frontend Developer"
-techStack: ["React", "TypeScript", "Tailwind"]
-problem: "Brief description of the problem solved"
+title: 'Project Title'
+period: { start: '2025-01', end: '2025-06' }
+role: 'Frontend Developer'
+techStack: ['React', 'TypeScript', 'Tailwind']
+problem: 'Brief description of the problem solved'
 actions:
-  - "Key action taken"
-  - "Another important action"
+  - 'Key action taken'
+  - 'Another important action'
 impact:
-  - "Measurable impact achieved"
+  - 'Measurable impact achieved'
 links:
-  demo: "https://demo.example.com"
-  repo: "https://github.com/username/repo"
-type: "work" # work | side | academic
+  demo: 'https://demo.example.com'
+  repo: 'https://github.com/username/repo'
+type: 'work' # work | side | academic
 ---
 Detailed project description goes here...
 ```
@@ -116,10 +120,10 @@ Create a new `.mdx` file in `src/content/posts/[lang]/`:
 
 ```yaml
 ---
-title: "Post Title"
+title: 'Post Title'
 date: 2025-01-01
-summary: "Brief summary of the post"
-tags: ["tag1", "tag2"]
+summary: 'Brief summary of the post'
+tags: ['tag1', 'tag2']
 draft: false
 ---
 Your post content here...

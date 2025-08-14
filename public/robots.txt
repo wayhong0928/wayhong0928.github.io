@@ -1,0 +1,15 @@
+# 允許所有搜尋引擎爬蟲存取網站所有內容
+User-agent: *
+Allow: /
+
+# 指定網站的 Sitemap 位置，方便搜尋引擎索引網站內容
+Sitemap: https://wayhong0928.github.io/sitemap-index.xml
+
+# 禁止搜尋引擎爬蟲存取開發相關檔案與資料夾
+Disallow: /docs/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+
+# 設定爬蟲每次請求間隔 1 秒，以優化網站效能
+Crawl-delay: 1

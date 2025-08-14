@@ -1,4 +1,4 @@
-@import "./tokens.css";
+@import './tokens.css';
 
 /* 使用 @theme 定義完整的設計系統 */
 @theme {
@@ -7,7 +7,7 @@
   --color-surface: hsl(var(--bg));
   --color-content: hsl(var(--text));
   --color-card: hsl(var(--card));
-  
+
   /* 灰階系統 */
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
@@ -19,7 +19,7 @@
   --color-gray-700: #374151;
   --color-gray-800: #1f2937;
   --color-gray-900: #111827;
-  
+
   /* 字體大小系統 */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -30,12 +30,12 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
-  
+
   /* 字重系統 */
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   /* 間距系統 */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -45,12 +45,12 @@
   --spacing-8: 2rem;
   --spacing-12: 3rem;
   --spacing-16: 4rem;
-  
+
   /* 圓角系統 */
   --border-radius-lg: var(--radius);
   --border-radius-xl: calc(var(--radius) * 1.5);
   --border-radius-2xl: calc(var(--radius) * 2);
-  
+
   /* 寬度系統 */
   --max-width-3xl: 48rem;
   --max-width-4xl: 56rem;
@@ -58,8 +58,7 @@
   --max-width-page: var(--page-max);
 }
 
-@tailwind base;
-@tailwind components;
+@import 'tailwindcss/preflight';
 @tailwind utilities;
 
 @layer base {
@@ -94,6 +93,8 @@
     border-radius: calc(var(--radius) * 2);
     background-color: hsl(var(--card));
     padding: 1.25rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
   }
 }

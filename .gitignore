@@ -42,6 +42,9 @@ coverage/
 .stylelintcache
 .cache
 .parcel-cache
+.turbo/
+.next/
+.nuxt/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
@@ -80,6 +83,14 @@ $RECYCLE.BIN/
 *.sln
 *.sw?
 
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
 # Temporary files
 *.log
 *.temp
@@ -87,9 +98,6 @@ $RECYCLE.BIN/
 
 # OS generated files
 Icon?
-
-# Optional npm cache directory
-.npm
 
 # Optional REPL history
 .node_repl_history
@@ -100,18 +108,81 @@ Icon?
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variables file for testing
 .env.test
 
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# TypeScript cache
+*.tsbuildinfo
 
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+# ESLint cache
+.eslintcache
 
-# DEVELOPMENT
-DEVELOPMENT.md
+# Prettier cache
+.prettiercache
+
+# Stylelint cache
+.stylelintcache
+
+# Bundle analyzer reports
+bundle-report.html
+bundle-stats.json
+
+# Storybook build outputs
+storybook-static
+
+# Temporary folders
+tmp/
+temp/
+
+# Lock files (除了 package-lock.json，我們需要保留它)
+yarn.lock
+pnpm-lock.yaml
+
+# Editor directories and files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Vim swap files
+*.swp
+*.swo
+
+# Emacs backup files
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# MacOS Finder info
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Security audit results
+audit-results.json
+
+# Performance test results
+lighthouse-results.json
+
+# GitHub Codespaces
+.devcontainer/
+
+# Local Netlify folder
+.netlify
+
+# Vercel
+.vercel
+
+# Test coverage
+coverage/
+.nyc_output/
+
+docs/

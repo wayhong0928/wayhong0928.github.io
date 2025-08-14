@@ -1,38 +1,69 @@
 #!/bin/sh
-# Pre-commit hook to run CI checks locally
+# Enhanced pre-commit hook with performance optimization and better UX
 
-echo "🔍 Running pre-commit checks..."
+echo "🔍 Starting pre-commit checks..."
+start_time=$(date +%s)
 
-# Run type checking
-echo "📝 Type checking..."
-npm run type-check
-if [ $? -ne 0 ]; then
-  echo "❌ Type checking failed!"
+# Function to run checks with timing
+run_check() {
+  local name="$1"
+  local command="$2"
+  local emoji="$3"
+  
+  echo "${emoji} ${name}..."
+  local check_start=$(date +%s)
+  
+  if eval "$command"; then
+    local check_end=$(date +%s)
+    local check_duration=$((check_end - check_start))
+    echo "✅ ${name} passed (${check_duration}s)"
+  else
+    echo "❌ ${name} failed!"
+    echo "💡 Tip: Run 'npm run ${command#npm run }' to debug"
+    exit 1
+  fi
+}
+
+# Parallel execution for independent checks
+{
+  run_check "Type checking" "npm run type-check" "📝"
+} &
+type_check_pid=$!
+
+{
+  run_check "Linting" "npm run lint" "🔧"
+} &
+lint_pid=$!
+
+{
+  run_check "Format checking" "npm run format:check" "💄"
+} &
+format_pid=$!
+
+# Wait for parallel jobs and check results
+wait $type_check_pid
+type_check_result=$?
+
+wait $lint_pid
+lint_result=$?
+
+wait $format_pid
+format_result=$?
+
+# Check if any parallel job failed
+if [ $type_check_result -ne 0 ] || [ $lint_result -ne 0 ] || [ $format_result -ne 0 ]; then
+  echo "❌ Some checks failed. Please fix the issues before committing."
+  echo "💡 Quick fix: npm run format && npm run lint:fix"
   exit 1
 fi
 
-# Run linting
-echo "🔧 Linting..."
-npm run lint
-if [ $? -ne 0 ]; then
-  echo "❌ Linting failed!"
-  exit 1
-fi
+# Build test (sequential as it may depend on above checks)
+run_check "Build testing" "npm run build" "🔨"
 
-# Run format checking
-echo "💄 Format checking..."
-npm run format:check
-if [ $? -ne 0 ]; then
-  echo "❌ Format checking failed! Run 'npm run format' to fix."
-  exit 1
-fi
+# Calculate total time
+end_time=$(date +%s)
+total_duration=$((end_time - start_time))
 
-# Run build test
-echo "🔨 Build testing..."
-npm run build
-if [ $? -ne 0 ]; then
-  echo "❌ Build failed!"
-  exit 1
-fi
-
-echo "✅ All checks passed! Ready to commit."
+echo ""
+echo "🎉 All checks passed in ${total_duration}s! Ready to commit."
+echo "📊 Performance: Type check, lint, and format ran in parallel for faster execution."

@@ -1,10 +1,27 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-const { title, description } = Astro.props;
+const { post } = Astro.props;
 ---
 
-<BaseLayout {title} {description}>
-  <article class="prose max-w-none">
+<article class="prose max-w-none">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold mb-4">{post.data.title}</h1>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+      <time datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString('zh-TW')}
+      </time>
+      {post.data.tags.length > 0 && (
+        <div class="flex gap-2">
+          {post.data.tags.map((tag: string) => (
+            <span class="px-2 py-1 bg-gray-100 rounded-lg text-xs">{tag}</span>
+          ))}
+        </div>
+      )}
+    </div>
+    {post.data.summary && (
+      <p class="text-lg text-gray-600 italic">{post.data.summary}</p>
+    )}
+  </header>
+  <div class="prose-content">
     <slot />
-  </article>
-</BaseLayout>
+  </div>
+</article>

@@ -112,3 +112,6 @@ Icon?
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# DEVELOPMENT
+DEVELOPMENT.md

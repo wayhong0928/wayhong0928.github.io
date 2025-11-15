@@ -1,16 +1,16 @@
-#exps {
+#club {
   height: 100%;
   display: block;
   padding: 20px;
   margin-bottom: 50px;
   box-shadow: 5px 5px 10px 10px #ccc;
 }
-#exps .title {
+#club .title {
   position: relative;
   width: 100%;
   height: 140px;
 }
-#exps .title span {
+#club .title span {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@
   box-shadow: 15px 5px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 100px;
 }
-#exps .title span::before {
+#club .title span::before {
   content: "";
   position: absolute;
   top: 80px;
@@ -34,7 +34,7 @@
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
-#exps .title span::after {
+#club .title span::after {
   content: "";
   position: absolute;
   top: 35px;
@@ -44,7 +44,7 @@
   z-index: -1;
   background-color: #c9bc99;
 }
-#exps .title span i {
+#club .title span i {
   font-weight: 700;
   font-size: 32px;
   letter-spacing: 30px;
@@ -53,35 +53,35 @@
   transform: scale(1);
   transition: 0.5s;
 }
-#exps .title span i:hover {
+#club .title span i:hover {
   transform: scale(1.2);
   letter-spacing: 40px;
   transition: 0.5s;
 }
-.exps-item {
+.club-item {
   display: flex;
   align-items: center;
   margin-bottom: 70px;
 }
-.exps-item .pic {
+.club-item .pic {
   width: 55%;
 }
-.exps-item .pic img {
+.club-item .pic img {
   width: 100%;
   border-radius: 50px;
   box-shadow: 0 0 3px 3px #aaa;
   transform: scale(1);
   transition: 0.5s;
 }
-.exps-item .pic img:hover {
+.club-item .pic img:hover {
   transform: scale(1.05);
   transition: 0.5s;
   border-radius: 50px;
   box-shadow: 0 0 5px 5px #aaa;
 }
-.exps-text {
+.club-text {
   width: 55%;
-  background-color:rgba(232, 223, 202,0.6);
+  background-color: rgba(232, 223, 202, 0.6);
   padding: 50px 30px;
   text-align: center;
   z-index: 1;
@@ -89,13 +89,13 @@
   transform: scale(1);
   transition: 0.5s;
 }
-.exps-text:hover {
+.club-text:hover {
   transform: scale(1.05);
-  background-color:rgba(232, 223, 202,1);
+  background-color: rgba(232, 223, 202, 1);
   border: 1px solid #333;
   transition: 0.5s;
 }
-.exps-item h2 {
+.club-item h2 {
   font-weight: 700;
   font-size: 28px;
   padding-bottom: 20px;
@@ -105,20 +105,52 @@
   transform: scale(1);
   transition: 0.5s;
 }
-.exps-text:hover h2 {
+.club-text:hover h2 {
   font-size: 32px;
   transform: scale(1.05);
   transition: 0.5s;
 }
-.exps-item p {
+.club-item p {
   text-align: justify;
   transform: scale(1);
   transition: 0.5s;
 }
-.exps-text:hover P {
-  transform: scale(1.05); 
+.club-text:hover P {
+  transform: scale(1.05);
   transition: 0.5s;
 }
-.exps-item > :first-child {
+.club-item > :first-child {
   margin-right: -10%;
+}
+
+@media (max-width: 768px) {
+  #club .title span {
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  #club .title span::before,
+  #club .title span::after {
+    display: none;
+  }
+  .club-item {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .club-item .pic,
+  .club-item .club-text {
+    width: 100%;
+  }
+  .club-item > :first-child {
+    margin-right: 0;
+  }
+  .club-item .pic {
+    margin-bottom: 20px;
+  }
+  .club-item:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+  .club-item:nth-child(5) {
+    flex-direction: column-reverse;
+  }
 }

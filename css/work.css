@@ -1,0 +1,70 @@
+.work .title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 250px;
+  border-radius: 20px;
+  top: -20px;
+  left: -20px;
+  overflow: hidden;
+}
+.work .title::before {
+  position: absolute;
+  content: "實習經歷";
+  width: 150%;
+  height: 60px;
+  background-color: #c9bc99;
+  transform: rotate(-40deg) translateY(-20px);
+  line-height: 1.75;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  color: #eee;
+  letter-spacing: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.work .title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #c9bc99;
+  z-index: 1;
+  box-shadow: 290px -230px #c9bc99;
+}
+
+.work .text {
+  width: 40%;
+  margin-top: 20px;
+}
+.work .text li {
+  text-align: justify;
+  padding: 15px 0;
+}
+
+@media (max-width: 768px) {
+  .work .title {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .work .title::before {
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .work .title::after {
+    display: none;
+  }
+  .work .bar,
+  .work .text {
+    width: 100%;
+  }
+}

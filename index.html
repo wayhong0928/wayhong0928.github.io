@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,29 +28,56 @@
     <div class="gap" id="about"></div>
     <section class="wrap aboutme">
       <img src="pictures/aboutme.jpg" class="photos" />
-      <h1>關於威宏</h1>
-      <article class="aboutme-article">
-        <ul>
-          <li class="first-content">
-            我是陳威宏！從壢商資處進到中原資管之後加入
-            <strong>
-              <a href="https://www.instagram.com/cycuemc/?hl=zh-tw" target="_blank">緊急醫療救護社</a>，取得
-              <a href="https://www.beclass.com/rid=25464e56144aeb5955f9" target="_blank">FR</a>、
-              <a href="https://www.instagram.com/p/Cd3M2wRLN2E/" target="_blank">EMT-1</a> 證照 </strong
-            >。 擔任產學營運處工讀生訓練自己。專長是打字很快，平常喜歡拿起手機隨手拍拍！
-          </li>
-          <li class="second-content">熱愛五月天，沒有五月天就活不下去。</li>
-        </ul>
-        <p class="aboutme-motto">相信祝福不會因堆疊的時光消逝。</p>
-      </article>
+      <div class="aboutme-content">
+        <h1>關於威宏</h1>
+        <article class="aboutme-article">
+          <ul>
+            <li class="first-content">
+              我是陳威宏！具備全端開發經驗與專案管理思維的資訊管理研究生。熟悉
+              <strong>React 與 Vue 現代前端框架</strong>，並具備 C# 、NodeJS、Django 後端系統建置經驗。<br />
+              曾於 <strong>PwC Taiwan</strong> 參與製造執行系統 (MES) 開發，具備統整團隊 UI 規範與跨部門規格溝通之實戰力。
+            </li>
+          </ul>
+          <div class="aboutme-info">
+            <p class="education">
+              中原大學 資訊管理學系 碩士 (2025/09 – 預計 2027/01)<br />
+              中原大學 資訊管理學系 學士 (2021/09 – 2025/06) <br />
+              學士期間曾獲兩次書卷獎
+            </p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <div class="gap" id="work"></div>
     <section class="wrap work">
       <div class="title"></div>
       <article class="text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus cum architecto odit vel eveniet saepe est eum
-        cumque, minima, atque, vero accusantium quasi. Aperiam corrupti nostrum blanditiis, laudantium fugiat voluptatibus!
+        <div class="work-item">
+          <div class="work-header">
+            <h3 class="work-company">資誠 (PwC Taiwan)</h3>
+            <span class="work-date">2025/02 – 2025/08</span>
+          </div>
+          <p class="work-position">前端工程師實習</p>
+          <ul class="work-description">
+            <li>參與企業級製造執行系統 (MES) 專案，從 React 新手迅速成長為能獨立交付元件的核心戰力</li>
+            <li>利用 Redux/MUI 開發高互動性之多維度資料表格與動態表單</li>
+            <li>主動負責整合前端團隊十位工程師的介面規格</li>
+            <li>導入 GitHub Copilot 優化開發工作流，原定需要三天開發的頁面縮短為一天到一天半</li>
+          </ul>
+        </div>
+        <hr class="work-divider" />
+        <div class="work-item">
+          <div class="work-header">
+            <h3 class="work-company">迪智國際有限公司</h3>
+            <span class="work-date">2023/07 – 2023/09</span>
+          </div>
+          <p class="work-position">程式設計實習生</p>
+          <ul class="work-description">
+            <li>使用 C# 與 MSSQL 開發政府補助系統之後臺管理介面</li>
+            <li>獨立完成核心 CRUD 功能，提升內部行政作業效率</li>
+          </ul>
+        </div>
       </article>
     </section>
 
@@ -58,34 +85,35 @@
     <section class="wrap project">
       <h1>專案成果</h1>
       <div class="project-item">
-        <img src="https://picsum.photos/300/200?random=4" />
+        <img src="pictures/ColorFour.png" />
         <article class="project-text">
-          <h3>TITLE</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h3>ColorFour 穿搭造型師</h3>
+          <p>大學畢業專題組長 & 全端開發 (2024/03 – 2024/12)</p>
         </article>
         <p class="drop-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at
+          以線上衣櫃資料庫為核心的服裝管理全方位 Web APP 解決方案。前端採用 Vue.js，後端運用 Django 建構 API，並串接 Google
+          Calendar 與 LineBot。獲第 29 屆全國大專校院資訊應用服務創新競賽入圍決賽。
         </p>
       </div>
       <div class="project-item">
-        <img src="https://picsum.photos/300/200?random=5" />
+        <img src="pictures/epub.jpg" />
         <article class="project-text">
-          <h3>TITLE</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h3>Epub2Markdown-Converter</h3>
+          <p>將 EPUB 電子書轉換為 Markdown 格式。</p>
         </article>
         <p class="drop-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          雖然這是一個純轉檔工具，但其輸出的格式經過特別優化，非常適合作為 Google NotebookLM、ChatGPT 或 RAG (Retrieval-Augmented
+          Generation) 系統的高品質輸入素材。
         </p>
       </div>
       <div class="project-item">
-        <img src="https://picsum.photos/300/200?random=6" />
+        <img src="pictures/mayday.jpg" />
         <article class="project-text">
-          <h3>EMT-1證照</h3>
-          <p>當你喊出：「救救我阿我救我」的時候我就會出現ㄛ～</p>
+          <h3>五月天世界巡演編年史</h3>
+          <p>一個基於時空數據的互動式地圖，紀錄五月天成軍以來飛越世界的軌跡與藍色回憶。</p>
         </article>
         <p class="drop-text">
-          這張證照是加入急救社最大的收穫，也領悟了急救專長需要長時間的養成與實戰經歷，
-          而EMT-1就像小孩子一樣，看似能做很多事情實際上能做的真的很少
+          透過互動式地球儀與時間軸，從早期的校園巡演到最新的「回到那一天」，我們試圖在數位世界中重建那片藍色螢光海。（持續開發中）
         </p>
       </div>
     </section>
@@ -97,52 +125,39 @@
       </div>
       <div class="club-item">
         <div class="pic">
-          <img src="https://picsum.photos/300/200?random=1" />
+          <img src="pictures/GitTA.jpg" />
         </div>
         <article class="club-text">
-          <h2>TITLE</h2>
+          <h2>Git & GitHub 課程教學助理</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda dolorum dicta illum ducimus! Doloribus nostrum
-            facilis nobis ducimus totam fugiat. Placeat culpa nisi iusto, quasi nulla eos unde dolorum!
+            中原大學 (2025/11 – 至今)：協助編撰 Git/GitHub 工作坊課程綱要，目前輔導約 30 名學員，
+            指導版本控制與團隊協作流程，並協助排除實務版控衝突 (Merge Conflict)。
           </p>
         </article>
       </div>
       <div class="club-item">
         <article class="club-text">
-          <h2>TITLE</h2>
+          <h2>初級救護技術員 (EMT-1)</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, dicta nisi maxime suscipit totam assumenda dolorem a
-            illo enim? Harum, vero unde eveniet facilis magni nam error iste odit mollitia.
+            國家級認證 (2022 – 至今)：具備到院前緊急救護實務專業，擁有在高壓、高強度突發環境下， 快速進行檢傷分類的冷靜決策能力。
           </p>
         </article>
-        <div class="pic">
-          <img src="https://picsum.photos/300/200?random=2" />
-        </div>
-      </div>
-      <div class="club-item">
         <div class="pic">
           <img src="pictures/emt.jpg" />
+        </div>
+      </div>
+      <div class="club-item">
+        <div class="pic">
+          <img src="pictures/CycuEMC.jpg" />
         </div>
         <article class="club-text">
           <h2>緊急醫療救護社</h2>
           <p>
-            唯一加入的服務性社團，當時的想法是擴充一點對自己有幫助的知識與能力，
-            經過了一年的社課以及考照讓我理解急救的現場變化快速，時間有限，做好可能會被當理所當然，
-            做不好很容易被告。不知道將來如果碰到緊急事件我會袖手旁觀還是伸出援手。
+            中原大學急救社 (2021 – 至今)：參與全國性運動會、大型展覽等 10+ 場次之救護站設置與現場值勤；
+            透過系統化教學設計推廣急救知識，確保高密度人群賽事之緊急應變 SOP 順利運作。<br />
+            圖為 2023 年全國大專校院運動會期間，於跆拳道/品勢項目救護站實務照片。
           </p>
         </article>
-      </div>
-      <div class="club-item">
-        <article class="club-text">
-          <h2>Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eius adipisci inventore, ullam rem earum nihil sequi
-            assumenda autem maxime ab dicta sed ipsum alias, similique odit repellendus illo dolores.
-          </p>
-        </article>
-        <div class="pic">
-          <img src="https://picsum.photos/300/200?random=3" />
-        </div>
       </div>
     </section>
 

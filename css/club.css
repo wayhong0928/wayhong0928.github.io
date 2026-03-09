@@ -50,13 +50,7 @@
   letter-spacing: 30px;
   color: #eee;
   text-shadow: 3px 3px 1px #ccc;
-  transform: scale(1);
-  transition: 0.5s;
-}
-#club .title span i:hover {
-  transform: scale(1.2);
-  letter-spacing: 40px;
-  transition: 0.5s;
+  font-style: normal;
 }
 .club-item {
   display: flex;
@@ -70,14 +64,6 @@
   width: 100%;
   border-radius: 50px;
   box-shadow: 0 0 3px 3px #aaa;
-  transform: scale(1);
-  transition: 0.5s;
-}
-.club-item .pic img:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
-  border-radius: 50px;
-  box-shadow: 0 0 5px 5px #aaa;
 }
 .club-text {
   width: 55%;
@@ -86,14 +72,6 @@
   text-align: center;
   z-index: 1;
   border-radius: 30px;
-  transform: scale(1);
-  transition: 0.5s;
-}
-.club-text:hover {
-  transform: scale(1.05);
-  background-color: rgba(232, 223, 202, 1);
-  border: 1px solid #333;
-  transition: 0.5s;
 }
 .club-item h2 {
   font-weight: 700;
@@ -102,36 +80,89 @@
   letter-spacing: 10px;
   border-bottom: 1px solid #333;
   margin-bottom: 20px;
-  transform: scale(1);
-  transition: 0.5s;
-}
-.club-text:hover h2 {
-  font-size: 32px;
-  transform: scale(1.05);
-  transition: 0.5s;
 }
 .club-item p {
   text-align: justify;
-  transform: scale(1);
-  transition: 0.5s;
-}
-.club-text:hover P {
-  transform: scale(1.05);
-  transition: 0.5s;
+  font-size: 15px;
+  line-height: 1.8;
 }
 .club-item > :first-child {
   margin-right: -10%;
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
+  #club {
+    padding: 20px;
+    overflow: hidden;
+  }
+  #club .title {
+    height: 120px;
+  }
   #club .title span {
-    left: 0;
-    width: 100%;
-    border-radius: 0;
+    width: 500px;
+    height: 70px;
+    left: -40px;
+  }
+  #club .title span::before {
+    top: 70px;
+    width: 35px;
+    height: 50px;
+  }
+  #club .title span::after {
+    top: 30px;
+    width: 30px;
+    height: 70px;
+  }
+  #club .title span i {
+    font-size: 26px;
+    letter-spacing: 20px;
+  }
+  .club-item {
+    margin-bottom: 50px;
+  }
+  .club-item .pic {
+    width: 50%;
+  }
+  .club-text {
+    width: 55%;
+    padding: 35px 25px;
+  }
+  .club-item h2 {
+    font-size: 24px;
+    letter-spacing: 8px;
+  }
+  .club-item > :first-child {
+    margin-right: -8%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #club {
+    padding: 20px 15px;
+  }
+  #club .title {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  #club .title span {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   }
   #club .title span::before,
   #club .title span::after {
     display: none;
+  }
+  #club .title span i {
+    font-size: 22px;
+    letter-spacing: 15px;
   }
   .club-item {
     flex-direction: column;
@@ -143,14 +174,61 @@
   }
   .club-item > :first-child {
     margin-right: 0;
+    margin-bottom: 15px;
   }
-  .club-item .pic {
-    margin-bottom: 20px;
+  .club-item .pic img {
+    border-radius: 25px;
   }
-  .club-item:nth-child(3) {
-    flex-direction: column-reverse;
+  .club-text {
+    padding: 25px 20px;
+    border-radius: 20px;
   }
+  .club-item h2 {
+    font-size: 22px;
+    letter-spacing: 6px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  .club-item p {
+    font-size: 14px;
+  }
+  .club-item:nth-child(3),
   .club-item:nth-child(5) {
     flex-direction: column-reverse;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  #club {
+    padding: 15px 10px;
+    margin-bottom: 30px;
+  }
+  #club .title span {
+    padding: 12px 30px;
+  }
+  #club .title span i {
+    font-size: 18px;
+    letter-spacing: 10px;
+  }
+  .club-item {
+    margin-bottom: 30px;
+  }
+  .club-item .pic img {
+    border-radius: 20px;
+  }
+  .club-text {
+    padding: 15px 12px;
+    border-radius: 12px;
+  }
+  .club-item h2 {
+    font-size: 18px;
+    letter-spacing: 4px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .club-item p {
+    font-size: 13px;
+    line-height: 1.7;
   }
 }

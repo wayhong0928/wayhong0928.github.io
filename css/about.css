@@ -2,115 +2,136 @@
   padding: 50px;
 }
 .aboutme .photos {
-  width: 600px;
-  height: 400px;
+  width: 550px;
+  height: 380px;
+  object-fit: cover;
   border-radius: 50px;
   box-shadow: 1px 1px 3px 3px #aaa;
-  transform: scale(1);
-  transition: 0.5s;
+  flex-shrink: 0;
 }
-.aboutme .photos:hover {
-  transform: scale(1.05);
-  box-shadow: 5px 5px 5px 5px #aaa;
-  transition: 0.5s;
+.aboutme-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
 }
-.aboutme h1 {
-  position: absolute;
-  top: 120px;
-  right: 170px;
-  font-size: 32px;
+.aboutme-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 .aboutme-article {
-  width: 40%;
-  height: 200px;
-  margin-left: 40px;
+  width: 100%;
+  max-width: 450px;
 }
 .aboutme-article ul {
   text-align: justify;
   list-style: none;
-  line-height: 2.5;
+  line-height: 2;
 }
 .first-content {
-  margin-top: -10px;
-  font-size: 16px;
-  transition: 0.3s;
+  font-size: 15px;
 }
 .first-content a {
   color: #333;
   text-decoration: none;
-  transition: 0.3s;
 }
-.first-content:hover a {
-  font-size: 20px;
-  color: #f00;
-  font-weight: 700;
-  transition: 0.3s;
-}
-.second-content {
-  font-size: 18px;
-  padding-top: 20px;
-  font-weight: 600;
-  font-family: "標楷體";
-  text-align: center;
-  transition: 0.5s;
-}
-.second-content:hover {
-  padding-top: 18px;
-  font-size: 22px;
-  color: rgb(22, 82, 155);
-  font-weight: 700;
-  letter-spacing: 3px;
-  transition: 0.5s;
-}
-.aboutme-motto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  margin-top: 40px;
+.aboutme-info {
+  margin-top: 25px;
   padding: 20px;
-  border-right: 2px solid #333;
-  border-left: 2px solid #333;
-  transform: scale(1);
-  transition: 0.5s;
-}
-.aboutme-motto:hover {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  border-right: 3px solid #333;
   border-left: 3px solid #333;
-  transform: scale(1.05);
-  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0 10px 10px 0;
+}
+.aboutme-info .education {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.aboutme-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.aboutme-info a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 1200px) {
-  .aboutme .photos {
-    width: 45%;
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .aboutme {
-    padding: 0;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
   }
   .aboutme .photos {
-    width: 80%;
-    height: auto;
-    margin-bottom: 20px;
+    width: 450px;
+    height: 300px;
   }
-  .aboutme h1 {
-    position: static;
-    text-align: center;
-    margin-bottom: 20px;
+  .aboutme-content {
+    margin-left: 0;
+  }
+  .aboutme-content h1 {
+    font-size: 28px;
   }
   .aboutme-article {
+    max-width: 400px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .aboutme {
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .aboutme .photos {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    max-height: 280px;
+    border-radius: 30px;
+  }
+  .aboutme-content {
     width: 100%;
     margin-left: 0;
+  }
+  .aboutme-content h1 {
+    font-size: 26px;
+    letter-spacing: 12px;
+  }
+  .aboutme-article {
+    max-width: none;
     text-align: center;
   }
   .aboutme-article ul {
     text-align: left;
+    padding: 0 10px;
+  }
+  .aboutme-info {
+    text-align: left;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .aboutme {
+    padding: 25px 15px;
+  }
+  .aboutme .photos {
+    width: 95%;
+    border-radius: 20px;
+  }
+  .aboutme-content h1 {
+    font-size: 22px;
+    letter-spacing: 8px;
+  }
+  .first-content {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .aboutme-info {
+    padding: 15px;
+  }
+  .aboutme-info .education {
+    font-size: 13px;
   }
 }

@@ -7,20 +7,21 @@
 .project-item {
   position: relative;
   margin: 0 15px;
-  width: 360px;
-  height: 270px;
+  width: 340px;
+  height: 255px;
   border-radius: 20px;
   box-shadow: 2px 2px 3px 3px #ccc;
   transform: translateY(0px);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .project-item:hover {
   transform: translateY(-50px);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .project-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 20px;
 }
 .project-text,
@@ -34,32 +35,33 @@
   border-radius: 20px;
   letter-spacing: 2px;
   text-align: justify;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .project-text {
   top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.65);
   opacity: 0;
 }
 .project-item:hover .project-text {
   opacity: 1;
   border-radius: 20px;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .drop-text {
   top: 50%;
   z-index: -1;
   transform: translateY(0px);
-  transition: 0.5s;
+  transition: 0.4s;
+  font-size: 14px;
+  line-height: 1.6;
 }
 .project-item:hover .drop-text {
   z-index: 1;
-  transition: 0.5s;
-  transform: translateY(150px);
+  transition: 0.4s;
+  transform: translateY(140px);
 }
-/* 效果線條 */
 .project-text h3 {
-  font-size: 20px;
+  font-size: 18px;
   color: #ff0;
 }
 .project-text h3::after {
@@ -69,30 +71,94 @@
   height: 2px;
   margin: 10px 0;
   background-color: #ff0;
-  transition: 0.5s 0.3s;
+  transition: 0.4s 0.2s;
 }
 .project-item:hover h3::after {
   width: 100%;
 }
 .project-text p {
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   font-weight: 300;
 }
 
-@media (max-width: 768px) {
-  .project h1 {
-    position: static;
-    margin-bottom: 40px;
+/* Tablet */
+@media (max-width: 1024px) {
+  .project {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 80px;
   }
   .project-item {
-    width: 80%;
-    margin: 0 0 30px 0;
+    width: 280px;
+    height: 210px;
+    margin: 0;
+  }
+  .project-item:hover {
+    transform: translateY(-30px);
+  }
+  .project-item:hover .drop-text {
+    transform: translateY(120px);
+  }
+  .drop-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    align-items: center;
+    padding: 75px 20px 30px;
+    gap: 25px;
+  }
+  .project h1 {
+    top: 20px;
+    font-size: 32px;
+  }
+  .project-item {
+    width: 90%;
+    max-width: 350px;
+    height: 220px;
   }
   .project-item:hover {
     transform: translateY(0);
   }
+  .project-text {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .project-text h3::after {
+    width: 50%;
+  }
   .drop-text {
     display: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .project {
+    padding: 70px 15px 25px;
+    gap: 20px;
+  }
+  .project h1 {
+    font-size: 26px;
+  }
+  .project-item {
+    width: 95%;
+    height: 200px;
+    border-radius: 15px;
+  }
+  .project-text {
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .project-text h3 {
+    font-size: 16px;
+  }
+  .project-text p {
+    font-size: 13px;
   }
 }

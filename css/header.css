@@ -22,6 +22,7 @@
   padding: 5px 1em;
   transform: translateY(0px);
   transition: 0.3s;
+  position: relative;
 }
 .header-nav a:hover {
   font-weight: 700;

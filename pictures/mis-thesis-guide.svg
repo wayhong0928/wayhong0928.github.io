@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <rect width="1400" height="800" fill="#fbfaf7" />
+  <rect x="24" y="24" width="1352" height="752" fill="none" stroke="#e0dbd0" stroke-width="2" />
+  <circle cx="700" cy="340" r="180" fill="#f0e5dc" />
+  <text x="700" y="400" text-anchor="middle" font-size="200" fill="#7a4a2b" font-family="Georgia, serif">&#9672;</text>
+  <text x="700" y="560" text-anchor="middle" font-size="92" font-weight="700" letter-spacing="4"
+        fill="#23211d" font-family="'Noto Serif TC','Source Han Serif TC','PingFang TC','Songti TC',Georgia,serif">研究方法</text>
+  <text x="700" y="640" text-anchor="middle" font-size="52" letter-spacing="10"
+        fill="#57534a" font-family="'Noto Serif TC','Source Han Serif TC','PingFang TC','Songti TC',Georgia,serif">知識網絡</text>
+  <text x="700" y="710" text-anchor="middle" font-size="30" letter-spacing="2"
+        fill="#8b857a" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei',Arial,sans-serif">wayhong0928.github.io/mis-thesis-guide</text>
+</svg>

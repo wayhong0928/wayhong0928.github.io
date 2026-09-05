@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/project.css" />
     <link rel="stylesheet" href="css/work.css" />
     <link rel="stylesheet" href="css/club.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="icon" href="pictures/logo.png" />
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <title>wayhong</title>
   </head>
   <body>
@@ -19,6 +21,7 @@
       <nav class="header-nav">
         <a href="#about">關於威宏</a>
         <a href="#work">實習經歷</a>
+        <a href="#skills">技能</a>
         <a href="#project">專案成果</a>
         <a href="#clubs">課外發展</a>
       </nav>
@@ -33,9 +36,13 @@
         <article class="aboutme-article">
           <ul>
             <li class="first-content">
-              我是陳威宏！具備全端開發經驗與專案管理思維的資訊管理研究生。熟悉
-              <strong>React 與 Vue 現代前端框架</strong>，並具備 C# 、NodeJS、Django 後端系統建置經驗。<br />
-              曾於 <strong>PwC Taiwan</strong> 參與製造執行系統 (MES) 開發，具備統整團隊 UI 規範與跨部門規格溝通之實戰力。
+              我是陳威宏！中原資管所碩二生，目前於 <strong>安永 (EY)</strong> 擔任顧問實習生，投入 AI
+              治理與零信任架構相關專案。<br />
+              曾於 <strong>PwC Taiwan</strong> 參與製造執行系統 (MES) 開發，統整前端團隊十位工程師的介面規格。
+            </li>
+            <li class="research-content">
+              研究方向聚焦數位學習領域，探討學生在程式設計學習過程中對生成式 AI 工具的依賴現象，
+              找出影響依賴程度的關鍵因素，作為改善 AI 輔助程式設計教學的參考。
             </li>
           </ul>
           <div class="aboutme-info">
@@ -93,6 +100,36 @@
       </article>
     </section>
 
+    <div class="gap" id="skills"></div>
+    <section class="wrap skills">
+      <h1>技能</h1>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3>AI 輔助開發</h3>
+          <p>Claude Code、Codex、GitHub Copilot</p>
+        </div>
+        <div class="skill-block">
+          <h3>框架與工具</h3>
+          <p>Git、React (Hooks)、Redux、MUI、Vue.js、Django、RESTful API、MySQL、MSSQL</p>
+        </div>
+        <div class="skill-block">
+          <h3>程式語言</h3>
+          <p>
+            <span class="iconify" data-icon="vscode-icons:file-type-typescript-official"></span> TypeScript、
+            <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript、
+            <span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python、
+            <span class="iconify" data-icon="vscode-icons:file-type-csharp"></span> C#、
+            <span class="iconify" data-icon="vscode-icons:file-type-html"></span> HTML /
+            <span class="iconify" data-icon="vscode-icons:file-type-css"></span> CSS
+          </p>
+        </div>
+        <div class="skill-block">
+          <h3>證書</h3>
+          <p>Nvidia — 深度學習基礎理論與實踐 (2025)<br />Google Cloud — 生成式 AI 開發者入門學程 (2024)</p>
+        </div>
+      </div>
+    </section>
+
     <div class="gap" id="project"></div>
     <section class="wrap project">
       <h1>專案成果</h1>
@@ -125,7 +162,8 @@
           <p>個人學術研究筆記整理與相關網站建置 (2026/09)</p>
         </article>
         <p class="drop-text">
-          整理社會科學與資訊管理取向的研究方法知識，涵蓋研究設計、量化與質性方法、論文寫作規範、AI 輔助研究工作流，建置成一個可查閱的靜態網站，供自己與同儕在準備論文時使用。
+          整理社會科學與資訊管理取向的研究方法知識，涵蓋研究設計、量化與質性方法、論文寫作規範、AI
+          輔助研究工作流，建置成一個可查閱的靜態網站，供自己與同儕在準備論文時使用。
         </p>
       </div>
     </section>
@@ -173,7 +211,10 @@
       </div>
     </section>
 
-    <footer class="main-footer">Copyright &copy; wayhong</footer>
+    <footer class="main-footer">
+      Copyright &copy; wayhong
+      <br /><small>2022 – 2026 沿用至今</small>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>

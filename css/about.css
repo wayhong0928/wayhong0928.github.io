@@ -31,6 +31,11 @@
 .first-content {
   font-size: 15px;
 }
+.research-content {
+  display: block;
+  font-size: 15px;
+  margin-top: 15px;
+}
 .first-content a {
   color: #333;
   text-decoration: none;

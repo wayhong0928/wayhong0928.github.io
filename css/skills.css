@@ -1,0 +1,62 @@
+.skills h1 {
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  font-size: 40px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 60px;
+  width: 100%;
+  padding-top: 70px;
+}
+.skill-block h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.skill-block p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+.skill-block .iconify {
+  font-size: 1.15em;
+  vertical-align: -0.15em;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .skills-grid {
+    gap: 25px 40px;
+    padding-top: 60px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skills h1 {
+    font-size: 32px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    padding-top: 15px;
+    gap: 22px;
+  }
+  .skill-block h3 {
+    font-size: 16px;
+  }
+  .skill-block p {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .skills h1 {
+    font-size: 24px;
+  }
+}

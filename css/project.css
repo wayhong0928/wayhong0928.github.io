@@ -120,20 +120,47 @@
   .project-item {
     width: 90%;
     max-width: 350px;
-    height: 220px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   .project-item:hover {
     transform: translateY(0);
   }
+  .project-item img {
+    position: static;
+    width: 100%;
+    height: 180px;
+    border-radius: 0;
+  }
   .project-text {
+    position: static;
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0;
   }
   .project-text h3::after {
     width: 50%;
   }
   .drop-text {
-    display: none;
+    position: static;
+    z-index: auto;
+    transform: none;
+    opacity: 1;
+    display: block;
+    background-color: #eeeada;
+    border-radius: 0;
+  }
+  /* 手機沒有hover狀態，點擊會觸發:hover造成文字位移卡住，直接關掉所有hover效果 */
+  .project-item:hover .project-text,
+  .project-item:hover .drop-text {
+    transform: none;
+    opacity: 1;
+    z-index: auto;
+  }
+  .project-item:hover h3::after {
+    width: 50%;
   }
 }
 
@@ -148,12 +175,13 @@
   }
   .project-item {
     width: 95%;
-    height: 200px;
     border-radius: 15px;
   }
   .project-text {
     padding: 15px;
-    border-radius: 15px;
+  }
+  .drop-text {
+    padding: 15px;
   }
   .project-text h3 {
     font-size: 16px;

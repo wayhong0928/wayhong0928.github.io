@@ -52,7 +52,7 @@ _2023/07 – 2023/09_
 
 ## 核心專案
 
-### [markdown-tool — Markdown 簡報工具](https://github.com/wayhong0928/markdown-tool) | Side Project
+### [md-to-slides — Markdown 簡報工具](https://github.com/wayhong0928/md-to-slides) | Side Project
 
 _2026/04 – 至今_
 
